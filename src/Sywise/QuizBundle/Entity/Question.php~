@@ -1,6 +1,6 @@
 <?php
 
-namespace Acme\DemoBundle\Entity;
+namespace Sywise\QuizBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Question
  *
  * @ORM\Table()
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Sywise\QuizBundle\Entity\QuestionRepository")
  */
 class Question
 {
@@ -22,35 +22,29 @@ class Question
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="string", length=200)
      */
-    protected $desciption;
+    protected $description;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="string", length=200)
      */
     protected $option1;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="string", length=200)
      */
     protected $option2;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="string", length=200)
      */
     protected $option3;
 
-    /**
-     * @ORM\Column(type="string", length=100)
-     */
-    protected $option4;
 
     /**
      * @ORM\Column(type="integer")
      */
     protected $answer;
-
-
 
 }

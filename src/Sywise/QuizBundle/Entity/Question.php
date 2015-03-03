@@ -1,6 +1,6 @@
 <?php
 
-namespace Acme\DemoBundle\Entity;
+namespace Sywise\QuizBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Question
  *
  * @ORM\Table()
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Sywise\QuizBundle\Entity\QuestionRepository")
  */
 class Question
 {
@@ -22,36 +22,30 @@ class Question
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="string", length=200)
      */
-    protected $desciption;
+    protected $description;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="string", length=200)
      */
     protected $option1;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="string", length=200)
      */
     protected $option2;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="string", length=200)
      */
     protected $option3;
 
-    /**
-     * @ORM\Column(type="string", length=100)
-     */
-    protected $option4;
 
     /**
      * @ORM\Column(type="integer")
      */
     protected $answer;
-
-
 
 
     /**
@@ -65,26 +59,26 @@ class Question
     }
 
     /**
-     * Set desciption
+     * Set description
      *
-     * @param string $desciption
+     * @param string $description
      * @return Question
      */
-    public function setDesciption($desciption)
+    public function setDescription($description)
     {
-        $this->desciption = $desciption;
+        $this->description = $description;
 
         return $this;
     }
 
     /**
-     * Get desciption
+     * Get description
      *
      * @return string 
      */
-    public function getDesciption()
+    public function getDescription()
     {
-        return $this->desciption;
+        return $this->description;
     }
 
     /**
@@ -154,29 +148,6 @@ class Question
     public function getOption3()
     {
         return $this->option3;
-    }
-
-    /**
-     * Set option4
-     *
-     * @param string $option4
-     * @return Question
-     */
-    public function setOption4($option4)
-    {
-        $this->option4 = $option4;
-
-        return $this;
-    }
-
-    /**
-     * Get option4
-     *
-     * @return string 
-     */
-    public function getOption4()
-    {
-        return $this->option4;
     }
 
     /**
