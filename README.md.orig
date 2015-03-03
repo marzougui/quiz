@@ -1,5 +1,4 @@
-# quiz
-Quiz application
+<<<<<<< HEAD
 Symfony Standard Edition
 ========================
 
@@ -69,3 +68,7 @@ Enjoy!
 [11]: http://symfony.com/doc/2.6/cookbook/logging/monolog.html
 [12]: http://symfony.com/doc/2.6/cookbook/assetic/asset_management.html
 [13]: http://symfony.com/doc/2.6/bundles/SensioGeneratorBundle/index.html
+=======
+# quiz
+Quiz application
+>>>>>>> 935d791b79972af82b1e630d03c2b8a60685e405
