@@ -1,0 +1,7 @@
+_welcome:
+    path:     /
+    defaults: { _controller: SywiseQuizBundle:Welcome:index }
+
+sywise_quiz_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: SywiseQuizBundle:Default:index, neme: 'name' }
