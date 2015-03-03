@@ -4,4 +4,12 @@ _welcome:
 
 sywise_quiz_homepage:
     path:     /hello/{name}
-    defaults: { _controller: SywiseQuizBundle:Default:index, neme: 'name' }
+    defaults: { _controller: SywiseQuizBundle:Default:index, name: 'default  name' }
+
+sywise_quiz_homepage_empty:
+    path:     /hello/
+    defaults: { _controller: SywiseQuizBundle:Default:index, name: 'default  name' }
+
+sywise_create:
+    path:     /create/
+    defaults: { _controller: SywiseQuizBundle:Default:create}
