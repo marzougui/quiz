@@ -41,12 +41,20 @@ class Question
      */
     protected $option3;
 
+    /**
+     * @ORM\Column(type="string", length=200, nullable=true)
+     */
+    protected $option4;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
      */
     protected $answer;
 
+    /**
+     * @ORM\Column(type="string", length=200, nullable=true)
+     */
+    protected $comment;
 
 
     /**
@@ -172,5 +180,51 @@ class Question
     public function getAnswer()
     {
         return $this->answer;
+    }
+
+    /**
+     * Set option4
+     *
+     * @param string $option4
+     * @return Question
+     */
+    public function setOption4($option4)
+    {
+        $this->option4 = $option4;
+
+        return $this;
+    }
+
+    /**
+     * Get option4
+     *
+     * @return string 
+     */
+    public function getOption4()
+    {
+        return $this->option4;
+    }
+
+    /**
+     * Set comment
+     *
+     * @param string $comment
+     * @return Question
+     */
+    public function setComment($comment)
+    {
+        $this->comment = $comment;
+
+        return $this;
+    }
+
+    /**
+     * Get comment
+     *
+     * @return string 
+     */
+    public function getComment()
+    {
+        return $this->comment;
     }
 }

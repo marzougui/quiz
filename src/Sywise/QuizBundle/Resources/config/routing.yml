@@ -13,3 +13,12 @@ sywise_quiz_homepage_empty:
 sywise_create:
     path:     /create/
     defaults: { _controller: SywiseQuizBundle:Default:create}
+
+sywise_add:
+    path:     /add/
+    defaults: { _controller: SywiseQuizBundle:Default:add}
+    methods: [POST]
+
+sywise_play:
+    path:     /play/
+    defaults: { _controller: SywiseQuizBundle:Play:index}
