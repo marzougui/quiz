@@ -32,7 +32,7 @@ CREATE TABLE `Question` (
   `option4` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
   `comment` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +41,7 @@ CREATE TABLE `Question` (
 
 LOCK TABLES `Question` WRITE;
 /*!40000 ALTER TABLE `Question` DISABLE KEYS */;
-INSERT INTO `Question` VALUES (16,'A Foo Bar','option 1dsdsds','dfdfsdfsdfdqqqqqq','aaaaaaaaaa',9,'bbbbbbbbbbbb',NULL),(17,'A Foo Bar','option 1dsdsds','dfdfsdfsdfdqqqqqq','aaaaaaaaaa',9,'bbbbbbbbbbbb',NULL),(18,'Question description','option 1dsdsds','dfdfsdfsdfdqqqqqq','aaaaaaaaaa',9,'bbbbbbbbbbbb',NULL),(19,'Question description','Possible answer 1','Possible answer 2','Possible answer 3',1,'Possible answer 4','Comments to show'),(20,'صدفسد دف د ظف','صدفسد دف د ظف','صدفسد دف د ظف','صدفسد دف د ظف',1,'صدفسد دف د ظف','صدفسد دف د ظف');
+INSERT INTO `Question` VALUES (16,'A Foo Bar','option 1dsdsds','dfdfsdfsdfdqqqqqq','aaaaaaaaaa',9,'bbbbbbbbbbbb',NULL),(17,'A Foo Bar','option 1dsdsds','dfdfsdfsdfdqqqqqq','aaaaaaaaaa',9,'bbbbbbbbbbbb',NULL),(18,'Question description','option 1dsdsds','dfdfsdfsdfdqqqqqq','aaaaaaaaaa',9,'bbbbbbbbbbbb',NULL),(19,'Question description','Possible answer 1','Possible answer 2','Possible answer 3',1,'Possible answer 4','Comments to show'),(20,'صدفسد دف د ظف','صدفسد دف د ظف','صدفسد دف د ظف','صدفسد دف د ظف',1,'صدفسد دف د ظف','صدفسد دف د ظف'),(21,'Question description','Possible answer 1','Possible answer 2','Possible answer 3',1,'Possible answer 4','Comments to show');
 /*!40000 ALTER TABLE `Question` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-03-04 15:47:30
+-- Dump completed on 2015-03-04 19:02:24
