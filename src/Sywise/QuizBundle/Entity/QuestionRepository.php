@@ -12,4 +12,11 @@ use Doctrine\ORM\EntityRepository;
  */
 class QuestionRepository extends EntityRepository
 {
+
+    public function countAllQuestions() {
+        $count  = $this->createQueryBuilder('j')
+            ->select('count(j.is)')
+            ->getQuery()
+            ->getSingleScalarResult();
+    }
 }

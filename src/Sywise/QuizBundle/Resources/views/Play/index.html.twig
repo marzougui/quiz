@@ -1,7 +1,23 @@
 
-    <h3 class="title">Welcome to the Quiz!</h3>
 
-    <a href="{{ path('sywise_create') }}"> Create a new question </a> <br>
-    <a href="{{ path('sywise_play') }}"> Play the Quiz </a> <br>
+    <p class="title">Answer The question by one option, and click the check button: </p>
+
+    <h2> {{ description}} -     {{theQuestion.option1 }}</h2>
+
+    <br>
+    <br>
+    <br>
+
+    <a href=""> Check answer</a> <br>
+
+    <a href=""> Load a new Question </a>
+
+
+
+    <br>
+    <br>
+    <br>
+    <p class="title">Currently we have <b>{{ total }}</b>  question in our DataBase, you can participate and add your question:</p>
+    <a href="{{ path('sywise_create') }}"> Propose a new Quizz Question </a>
 
 
