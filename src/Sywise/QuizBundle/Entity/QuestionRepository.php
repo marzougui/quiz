@@ -19,4 +19,15 @@ class QuestionRepository extends EntityRepository
             ->getQuery()
             ->getSingleScalarResult();
     }
+
+    public function randomQuestion() {
+        $q = $this->createQueryBuilder('e')
+            ->orderBy('rand');
+        return $q->getQuery()->getSingleResult();
+
+    }
+
+    public function findStartId() {
+        return $this->$repository->find(20);
+    }
 }

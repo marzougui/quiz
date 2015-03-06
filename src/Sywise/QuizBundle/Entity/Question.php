@@ -56,6 +56,13 @@ class Question
      */
     protected $comment;
 
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    protected $categoryId;
+
+
+
 
     /**
      * Get id
@@ -226,5 +233,28 @@ class Question
     public function getComment()
     {
         return $this->comment;
+    }
+
+    /**
+     * Set categoryId
+     *
+     * @param integer $categoryId
+     * @return Question
+     */
+    public function setCategoryId($categoryId)
+    {
+        $this->categoryId = $categoryId;
+
+        return $this;
+    }
+
+    /**
+     * Get categoryId
+     *
+     * @return integer 
+     */
+    public function getCategoryId()
+    {
+        return $this->categoryId;
     }
 }

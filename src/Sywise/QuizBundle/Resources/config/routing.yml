@@ -22,3 +22,8 @@ sywise_add:
 sywise_play:
     path:     /play/
     defaults: { _controller: SywiseQuizBundle:Play:index}
+
+sywise_process:
+    path:     /process/
+    defaults: { _controller: SywiseQuizBundle:Play:process}
+    methods: [POST]

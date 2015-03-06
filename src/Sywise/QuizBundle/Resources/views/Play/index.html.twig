@@ -1,30 +1,28 @@
+{% for flashMessage in app.session.flashbag.get('message') %}
+    <div class="flash-notice">
+        {{ flashMessage }}
+    </div>
+{% endfor %}
 
 
-    <p class="title">Answer The question by one option, and click the check button: </p>
+<p class="title">Answer The question by one option, and click the check button: </p>
 
-    <h2>{{theQuestion.description}}</h2>
-
-    <ul>
-        <li> {{theQuestion.option1}}</li>
-        <li> {{theQuestion.option2}}</li>
-        <li> {{theQuestion.option3}}</li>
-        <li> {{theQuestion.option4}}</li>
-    </ul>
+<h2>{{ theQuestion.description }}</h2>
 
 
-    <br>
-    <br>
-
-    <a href=""> Check answer</a> <br>
-
-    <a href=""> Load a new Question </a>
+{{ form_start(form) }}
+{{ form_widget(form) }}
+{{ form_end(form) }}
 
 
+<br>
+<br>
 
-    <br>
-    <br>
-    <br>
-    <p class="title">Currently we have <b>{{ total }}</b>  question in our DataBase, you can participate and add your question:</p>
-    <a href="{{ path('sywise_create') }}"> Propose a new Quizz Question </a>
+
+<a href=""> Load a new Question </a>
+<br>
+<p class="title">Currently we have <b>{{ total }}</b> question in our DataBase, you can participate and add your
+    question:</p>
+<a href="{{ path('sywise_create') }}"> Propose a new Quizz Question </a>
 
 
