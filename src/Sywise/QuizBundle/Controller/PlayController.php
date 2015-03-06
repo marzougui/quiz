@@ -60,15 +60,12 @@ class PlayController extends Controller
 
     public function processAction(Request $request) {
 
-
-
         //Get count of questions
         $repository = $this->getDoctrine()->getRepository('SywiseQuizBundle:Question');
         $questions = $repository->findAll();
         $total = count($questions);
 
 
-        //TODO: Fetch a random question by ID
 
         $theQuestion = $questions[round(rand(0, $total - 1))];
 
@@ -110,7 +107,10 @@ class PlayController extends Controller
                 $session->getFlashBag()->add('message', 'Wrong !');
             }
 
-            return $this->redirect($this->generateUrl('sywise_play'));
+            return $this->redirect($this->generateUrl('sywise_play',
+                array('total' => $total,
+                    'theQuestion' => $theQuestion
+                )));
 
 
             //exit;
