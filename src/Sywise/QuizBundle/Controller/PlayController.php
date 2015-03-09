@@ -87,7 +87,6 @@ class PlayController extends Controller
 
         if ($form->isValid()) {
 
-
             $data = $form->getData();
             $theQuestion = $repository->find($data['questionId']);
 
@@ -107,9 +106,7 @@ class PlayController extends Controller
 
         } else {
 
-
         }
-
 
         return $this->render('SywiseQuizBundle:Play:index.html.twig',
             array('total' => $total,
