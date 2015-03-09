@@ -19,9 +19,10 @@ class DefaultController extends Controller
 
     public function addAction(Request $request)
     {
-
-
         $question = new Question();
+
+        $form = $this->createForm(new QuestionType());
+
         $form = $this->createFormBuilder($question)
             ->add('description', 'text')
             ->add('option1', 'text')
@@ -37,24 +38,19 @@ class DefaultController extends Controller
 
         if ($form->isValid()) {
             // Persisting data
-
             $em = $this->getDoctrine()->getManager();
             $em->persist($question);
             $em->flush();
-
             $session = $this->getRequest()->getSession();
             $session->getFlashBag()->add('message', 'Article saved!');
-
-            return $this->render('SywiseQuizBundle:Default:index.html.twig', array('name' => "The value is Registred"));
+            return $this->redirect($this->generateUrl('_welcome'));
         }
-
-        return $this->render('SywiseQuizBundle:Default:index.html.twig', array('name' => "Not Registred"));
-
+        $session->getFlashBag()->add('message', 'Problem in saving the Question !');
+        return $this->render('SywiseQuizBundle:Default:new.html.twig', array('form' => $form->createView()));
     }
 
     public function createAction()
     {
-
         $question = new Question();
         $question->setDescription('Question description');
         $question->setOption1('Possible answer 1');
@@ -75,6 +71,7 @@ class DefaultController extends Controller
             ->add('save', 'submit', array('label' => 'Create Question'))
             ->setAction($this->generateUrl('sywise_add'))
             ->getForm();
+
 
         //return new Response('Created Question id '.$question->getId());
         return $this->render('SywiseQuizBundle:Default:new.html.twig', array('form' => $form->createView()));

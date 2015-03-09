@@ -18,9 +18,6 @@ class PlayController extends Controller
         $questions = $repository->findAll();
         $total = count($questions);
 
-
-        //TODO: Fetch a random question by ID
-
         $theQuestion = $questions[round(rand(0, $total - 1))];
 
         //Creating the Form:
@@ -45,11 +42,6 @@ class PlayController extends Controller
             ->getForm();
 
 
-        //$form->handleRequest($request);
-        //if ($form->isValid()) {
-        //    exit;
-        //}
-
         return $this->render('SywiseQuizBundle:Play:index.html.twig',
             array('total' => $total,
                 'theQuestion' => $theQuestion,
@@ -58,13 +50,14 @@ class PlayController extends Controller
         );
     }
 
-    public function processAction(Request $request) {
+    public function processAction(Request $request)
+    {
 
+        $question = new Question();
         //Get count of questions
         $repository = $this->getDoctrine()->getRepository('SywiseQuizBundle:Question');
         $questions = $repository->findAll();
         $total = count($questions);
-
 
 
         $theQuestion = $questions[round(rand(0, $total - 1))];
@@ -87,7 +80,6 @@ class PlayController extends Controller
                 'data' => $theQuestion->getId()
             ))
             ->add('save', 'submit', array('label' => 'Check answer'))
-            ->setAction($this->generateUrl('sywise_play'))
             ->getForm();
 
 
@@ -95,8 +87,10 @@ class PlayController extends Controller
 
         if ($form->isValid()) {
 
+
             $data = $form->getData();
             $theQuestion = $repository->find($data['questionId']);
+
 
             $session = $this->getRequest()->getSession();
 
@@ -107,19 +101,15 @@ class PlayController extends Controller
                 $session->getFlashBag()->add('message', 'Wrong !');
             }
 
-            return $this->redirect($this->generateUrl('sywise_play',
-                array('total' => $total,
-                    'theQuestion' => $theQuestion
-                )));
+            return $this->render('SywiseQuizBundle:Play:answer.html.twig',
+                array('theQuestion' => $theQuestion,
+                    'userResponse' => $data['answer']));
 
-
-            //exit;
         } else {
 
 
-
-
         }
+
 
         return $this->render('SywiseQuizBundle:Play:index.html.twig',
             array('total' => $total,
@@ -127,7 +117,6 @@ class PlayController extends Controller
                 'form' => $form->createView()
             )
         );
-
 
 
     }

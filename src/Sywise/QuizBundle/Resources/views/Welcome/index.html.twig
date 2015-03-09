@@ -1,4 +1,12 @@
 
+{% for flashMessage in app.session.flashbag.get('message') %}
+    <div class="flash-notice">
+        {{ flashMessage }}
+    </div>
+{% endfor %}
+
+
+
     <h3 class="title">Welcome to the Quiz!</h3>
 
     <a href="{{ path('sywise_create') }}"> Create a new question </a> <br>

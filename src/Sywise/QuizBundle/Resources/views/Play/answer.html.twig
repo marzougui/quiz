@@ -1,0 +1,35 @@
+{% for flashMessage in app.session.flashbag.get('message') %}
+    <div class="flash-notice">
+        {% if theQuestion.answer == userResponse %}
+            <h3 style="font-weight: bold; color: green"> {{ flashMessage }} </h3>
+        {% else %}
+            <h3 style="font-weight: bold; color: red"> {{ flashMessage }} </h3>
+        {% endif %}
+
+    </div>
+{% endfor %}
+
+
+<h2>{{ theQuestion.description }}</h2>
+
+<ul>
+    <li {% if theQuestion.answer == 1 %} style="font-weight: bold; color: green" {% elseif userResponse == 1 %} style="font-weight: bold; color: red" {% endif %} >{{ theQuestion.option1 }}</li>
+    <li {% if theQuestion.answer == 2 %} style="font-weight: bold; color: green" {% elseif userResponse == 2 %} style="font-weight: bold; color: red" {% endif %} >{{ theQuestion.option2 }}</li>
+    <li {% if theQuestion.answer == 3 %} style="font-weight: bold; color: green" {% elseif userResponse == 3 %} style="font-weight: bold; color: red" {% endif %} >{{ theQuestion.option3 }}</li>
+    <li {% if theQuestion.answer == 4 %} style="font-weight: bold; color: green" {% elseif userResponse == 4 %} style="font-weight: bold; color: red" {% endif %} >{{ theQuestion.option4 }}</li>
+</ul>
+
+<br>
+
+{% if theQuestion.answer != userResponse %}
+    <h3>
+        {{ theQuestion.comment }}
+    </h3>
+{% endif %}
+
+<br>
+
+<a href="{{ path('sywise_play') }}"> Load a new Question </a>
+<br>
+
+
