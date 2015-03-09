@@ -1,3 +1,7 @@
+{% extends "SywiseQuizBundle::layout.html.twig" %}
+{% block body %}
+
+
 {% for flashMessage in app.session.flashbag.get('message') %}
     <div class="flash-notice">
         {{ flashMessage }}
@@ -26,3 +30,4 @@
 <a href="{{ path('sywise_create') }}"> Propose a new Quizz Question </a>
 
 
+{% endblock %}

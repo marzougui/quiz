@@ -1,10 +1,13 @@
-{% extends "::base.html.twig" %}
-
+{% extends "SywiseQuizBundle::layout.html.twig" %}
+{% block body %}
 
 {{ message }}!
 
 <br>
-
+sdsds
 <a href="{{ path('sywise_play ') }}"> Load a new Question </a>
 <br>
 <a href="{{ path('sywise_create') }}"> Propose a new Quizz Question </a>
+
+
+{% endblock %}
