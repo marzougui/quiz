@@ -2,32 +2,40 @@
 {% block body %}
 
 
-{% for flashMessage in app.session.flashbag.get('message') %}
-    <div class="flash-notice">
-        {{ flashMessage }}
+    {% for flashMessage in app.session.flashbag.get('message') %}
+        <div class="flash-notice">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+
+
+    <p class="title">Answer The question by one option, and click the check button: </p>
+
+
+
+
+    <div class="row">
+        <h2>{{ theQuestion.description }}</h2>
     </div>
-{% endfor %}
+
+    {{ form_start(form) }}
+    {{ form_errors(form) }}
+    <div class="row">
+        <div class="text-left col-xs-5 col-xs-offset-5">
+            {{ form_widget(form.answer) }}
+            {{ form_widget(form.save) }}
+        </div>
+    </div>
+    {{ form_end(form) }}
+    <br>
+    <br>
 
 
-<p class="title">Answer The question by one option, and click the check button: </p>
-
-<h2>{{ theQuestion.description }}</h2>
-
-
-{{ form_start(form) }}
-{{ form_widget(form) }}
-{{ form_end(form) }}
-
-
-<br>
-<br>
-
-
-<a href=""> Load a new Question </a>
-<br>
-<p class="title">Currently we have <b>{{ total }}</b> question in our DataBase, you can participate and add your
-    question:</p>
-<a href="{{ path('sywise_create') }}"> Propose a new Quizz Question </a>
+    <a href=""> Load a new Question </a>
+    <br>
+    <p class="title">Currently we have <b>{{ total }}</b> question in our DataBase, you can participate and add your
+        question:</p>
+    <a href="{{ path('sywise_create') }}"> Propose a new Quizz Question </a>
 
 
 {% endblock %}
