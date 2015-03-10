@@ -14,6 +14,8 @@ Installation
 After downloadgin from github:
 
 Install composer phar
+
+
 curl -sS https://getcomposer.org/installer | php
 
 
