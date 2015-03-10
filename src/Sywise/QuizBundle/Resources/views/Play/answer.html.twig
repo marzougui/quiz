@@ -13,15 +13,25 @@
     </div>
 {% endfor %}
 
+    <div class="row">
+        <h2>{{ theQuestion.description }}</h2>
+    </div>
 
-<h2>{{ theQuestion.description }}</h2>
+    <div class="row">
+        <div class="text-left col-xs-5 col-xs-offset-5">
+            <ul>
+                <li> <span  {% if theQuestion.answer == 1 %} class="label label-success" {% elseif userResponse == 1 %} class="label label-danger" {% endif %}> {{ theQuestion.option1 }} </span></li>
+                <li> <span  {% if theQuestion.answer == 2 %} class="label label-success" {% elseif userResponse == 2 %} class="label label-danger" {% endif %}> {{ theQuestion.option2 }} </span></li>
+                <li> <span  {% if theQuestion.answer == 3 %} class="label label-success" {% elseif userResponse == 3 %} class="label label-danger" {% endif %}> {{ theQuestion.option3 }} </span></li>
+                <li> <span  {% if theQuestion.answer == 4 %} class="label label-success" {% elseif userResponse == 4 %} class="label label-danger" {% endif %}> {{ theQuestion.option4 }} </span></li>
+            </ul>
+        </div>
+    </div>
 
-<ul>
-    <li {% if theQuestion.answer == 1 %} style="font-weight: bold; color: green" {% elseif userResponse == 1 %} style="font-weight: bold; color: red" {% endif %} >{{ theQuestion.option1 }}</li>
-    <li {% if theQuestion.answer == 2 %} style="font-weight: bold; color: green" {% elseif userResponse == 2 %} style="font-weight: bold; color: red" {% endif %} >{{ theQuestion.option2 }}</li>
-    <li {% if theQuestion.answer == 3 %} style="font-weight: bold; color: green" {% elseif userResponse == 3 %} style="font-weight: bold; color: red" {% endif %} >{{ theQuestion.option3 }}</li>
-    <li {% if theQuestion.answer == 4 %} style="font-weight: bold; color: green" {% elseif userResponse == 4 %} style="font-weight: bold; color: red" {% endif %} >{{ theQuestion.option4 }}</li>
-</ul>
+
+
+
+
 
 <br>
 
